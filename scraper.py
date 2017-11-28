@@ -74,7 +74,7 @@ class BernSpider(scrapy.Spider):
 #            f.write(response.body)
 
 # Write out to the sqlite database using scraperwiki library
-scraperwiki.sqlite.save(unique_keys=[format(response.meta['number']], data={"Geschaeftsnummer": response.meta['number'], "format": "pdf", "file": response.body})
+scraperwiki.sqlite.save(unique_keys={format(response.meta['number']], data={"Geschaeftsnummer": response.meta['number'], "format": "pdf", "file": response.body})
 #
 # # An arbitrary query against the database
 # scraperwiki.sql.select("* from data where 'name'='peter'")
